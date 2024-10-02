@@ -75,7 +75,7 @@ const SpotCalendar: FC<
   if (!isSpot) return;
 
   const volunteers = data
-    .map(([_, email, name, phone, ...hours]) => ({ email, name, phone, hours }))
+    .map(([, email, name, phone, ...hours]) => ({ email, name, phone, hours }))
     .filter(({ hours }) => !!hours[index])
     .map((person) => ({ ...person, hours: person.hours[index].split(", ") }));
 
