@@ -14,11 +14,16 @@ setInterval(() => {
 }, FIVE_MINUTES);
 
 export async function getSheetData(): Promise<SheetData> {
+  const email = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
+  const key = process.env.GOOGLE_PRIVATE_KEY;
+
+  if (!email || !key) return { headers: [], rows: []};
+
   if (!!cache.headers && !! cache.rows) return cache as SheetData;
 
   const serviceAccountAuth = new JWT({
-    email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    key: process.env.GOOGLE_PRIVATE_KEY?.split(String.raw`\n`).join("\n"),
+    email,
+    key: key.split(String.raw`\n`).join("\n"),
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
 
