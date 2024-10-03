@@ -2,7 +2,7 @@
 
 import type { Spot, Person, Volunteer } from "../lib/types";
 
-import { FC, useState } from "react";
+import { FC, Fragment, useState } from "react";
 import { pluralize, toTitleCase } from "../lib/helpers";
 import Modal from "../lib/Modal";
 import { colors } from "../lib/colors";
@@ -87,7 +87,7 @@ const SpotCalendar: FC<
 
       <main style={mainStyles}>
         {hours.map((h) => (
-          <>
+          <Fragment key={`${name}-{h}`}>
             <HourRow
               h={h}
               volunteers={volunteers}
@@ -103,7 +103,7 @@ const SpotCalendar: FC<
                 isHalf
               />
             )}
-          </>
+          </Fragment>
         ))}
       </main>
 
