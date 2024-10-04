@@ -1,10 +1,12 @@
 import Image from "next/image";
+import { unstable_noStore as noStore } from 'next/cache';
 import { getSheetData } from "../lib/sheet";
 import { parseSpot } from "../lib/helpers";
 import SpotCalendar from "./Spot";
 import logo from "../assets/logo_pitxuns_titre.png";
 
 export default async function Home() {
+  noStore();
   const { headers, rows } = await getSheetData();
   const spots = headers.map(parseSpot) ?? [];
 
