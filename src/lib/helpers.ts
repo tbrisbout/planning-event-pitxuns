@@ -14,12 +14,12 @@ const DEFAULT_HOURS = [14, 15, 16, 17, 18, 19, 20, 21];
 // TODO update sheet column names to store this
 const SPOT_SPECIFIC_HOURS: Record<string, { start: number; end: number }> = {
   "Mise en place": { start: 14, end: 16 },
-  "Securité / Bracelets": { start: 16, end: 21 },
+  "Securité": { start: 16, end: 21 },
   Caisse: { start: 16, end: 21 },
   "Stand Bar": { start: 16, end: 21 },
+  "Stand Talo": { start: 16, end: 20 },
   DJ: { start: 16, end: 21 },
   "Stand Barbapapa": { start: 16, end: 20 },
-  "Stand Photobooth": { start: 16, end: 20 },
   "Stand Maquillage": { start: 16, end: 19 },
   Rangement: { start: 20, end: 21 },
 };
