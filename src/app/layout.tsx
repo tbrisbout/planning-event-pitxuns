@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Pixtuns - Planning Event",
+  title: "Pitxuns - Planning Event",
   description: "Site pour la vue du planning des evenements de l'APE les Pitxuns - Thermes Salins",
 };
 
