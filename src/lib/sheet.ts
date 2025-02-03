@@ -33,8 +33,10 @@ export async function getSheetData(): Promise<SheetData> {
     serviceAccountAuth,
   );
 
+  const sheetIndex = !!process.env.SHEET_INDEX ? parseInt(process.env.SHEET_INDEX, 10) : 2
+
   await doc.loadInfo();
-  const sheet = doc.sheetsByIndex[2];
+  const sheet = doc.sheetsByIndex[sheetIndex];
   const rawRaws = await sheet.getRows();
 
   const headers = sheet.headerValues.filter((_, i) => i > 3);
