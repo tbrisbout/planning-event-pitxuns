@@ -87,7 +87,7 @@ const SpotCalendar: FC<
 
       <main style={mainStyles}>
         {hours.map((h) => (
-          <Fragment key={`${name}-{h}`}>
+          <Fragment key={`${name}-${h}`}>
             <HourRow
               h={h}
               volunteers={volunteers}
