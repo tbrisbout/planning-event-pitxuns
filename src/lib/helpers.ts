@@ -21,8 +21,11 @@ const SPOT_SPECIFIC_HOURS: Record<string, { start: number; end: number }> = {
   DJ: { start: 16, end: 21 },
   "Stand Barbapapa": { start: 16, end: 20 },
   "Stand Maquillage": { start: 16, end: 19 },
-  Rangement: { start: 20, end: 21 },
+  Rangement: { start: 20, end: 22 },
   "Bénévole Photographe": { start: 16, end: 19},
+  "Preparation sandwich": { start: 11, end: 16 },
+  "Stand Jeux Basque Gaia": { start: 17, end: 19 },
+  "Stand Repas": { start: 18, end: 21 },
 };
 
 export const parseSpot = (spot: string): Spot => {
